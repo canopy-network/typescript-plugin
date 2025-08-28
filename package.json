@@ -24,7 +24,7 @@
         "lint:fix": "eslint src/ test/ --ext .ts,.js --fix",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "build:proto": "pbjs -t static-module -w es6 -o src/proto/index.js proto/*.proto && pbts -o src/proto/index.d.ts src/proto/index.js",
+        "build:proto": "pbjs -t static-module -w commonjs -o src/proto/index.js proto/*.proto && pbts -o src/proto/index.d.ts src/proto/index.js",
         "clean": "rm -rf dist/ coverage/ test-results/ node_modules/.cache/",
         "clean:proto": "rm -f src/proto/index.js src/proto/index.d.ts",
         "prebuild": "npm run clean && npm run type-check",
@@ -73,7 +73,6 @@
         "node": ">=18.0.0",
         "npm": ">=8.0.0"
     },
-    "type": "module",
     "files": [
         "dist/**/*",
         "README.md",
